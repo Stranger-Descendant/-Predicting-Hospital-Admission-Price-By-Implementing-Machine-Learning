@@ -18,42 +18,27 @@ Project Member:
 
 ## Introduction
 
-Tatiana Kalganova and Ivars Dzalbs published a dataset of their outbound logistics networks. This dataset includes demand information for 1000 orders, which must be directed through their distribution system, consisting of 19 warehouses, 11 ports of departure, 9 carriers, and a single port of arrival.
-
-The project is to design an optimal distribution network that incorporates warehouses, shipping routes, and courier services to create the most economical supply chain possible. The goal is to minimize the total costs, comprising warehouse operations and transportation expenses, while adhering to the constraints of demand, supply, and shipping logistics.
+This project aims to implement advanced machine learning techniques to accurately predict hospital billing costs for patients. By analyzing various patient data and health metrics, the model seeks to enhance financial planning and decision-making for healthcare providers.
 
 ## Data
 
-The data for this project is from Brunel University London’s public supply chain datasets.
-
-- [Supply Chain Logistics Problem Dataset](https://brunel.figshare.com/articles/dataset/Supply_Chain_Logistics_Problem_Dataset/7558679)
-- Detailed descriptions of this dataset can be found in the paper: *[Accelerating supply chains with Ant Colony Optimization across a range of hardware solutions](https://www.sciencedirect.com/science/article/pii/S0360835220303442?via%3Dihub)*
+The dataset used consists of 2,772 entries across 7 columns, focusing on individual medical costs billed by health insurance. Key variables include age, sex, BMI, number of children, smoking status, region, and charges. The dataset contains categorical features (e.g., sex, smoker, region) and continuous variables (e.g., age, BMI, charges).
 
 ## Exploratory Data Analysis
 
-![heatmap_plant_port_connections](images/heatmap_plant_port_connections.png)
-
-Most warehouses are connected to only a single warehouse port, and many warehouses are connected to warehouse port 4. This suggests that many warehouses may only be sent via one freight, and many orders may be sent through freight going through warehouse port 4.
-
-![product_distribution](images/product_distribution.png)
-
-Most products are only ordered a small number of times.
-
-![cost_capacity](images/cost_capacity.png)
-
-Most warehouses negatively correlate the cost per unit cost and the daily order capacity. We should expect the warehouses with lower costs per unit to have the most orders allocated.
+- Descriptive Statistics: Initial analysis reveals insights into demographics, showing a higher prevalence of younger individuals, lower smoking rates, and an even distribution across regions.
+- Visualizations: Various plots (histograms, box plots, and heatmaps) illustrate the distribution of demographic characteristics and their correlation with medical charges, highlighting significant relationships between smoking status, age, BMI, and charges.
 
 ## Baseline Model
 
-We developed a baseline model for addressing this problem, the **Yan-Tian Greedy Algorithm**. The primary concept behind this approach involves a systematic iteration through all incoming orders. For each order, we search available warehouses and their corresponding freight options, starting from the beginning of the list. The algorithm then assigns the order to the first suitable warehouse-freight pair it encounters, following a thorough evaluation to ensure that all necessary conditions are met before making the assignment. The pseudo-code is shown as follows.
+- Preprocessing: Categorical features are encoded using one-hot encoding, while numerical features remain unchanged. The dataset is split into training and testing sets for model evaluation.
+- Model Selection: Several regression models are implemented, including Linear Regression, Random Forest, and XGBoost, to predict continuous insurance charges.
 
-![greedy](images/greedy.png)
-
-The cost of the solution produced by the baseline model is **\$8,878,241.89**.
 
 ## Optimization Model
 
-![optimization](images/optimization.png)
+- Training and Evaluation: Models are trained, and metrics such as R² score, Mean Squared Error (MSE), and Mean Absolute Error (MAE) are calculated to assess their performance. The "Extra Trees Regression" model emerges as the best performer.
+- Classification Models: The continuous charges variable is transformed into a binary category (above/below median), allowing for classification. Logistic Regression and XGBoost Classification yield the highest accuracies.
 
 ## Results and Analysis
 
@@ -80,9 +65,3 @@ The outcomes obtained in our study align with the expectations derived from our 
 - Few orders are allocated to warehouses 15, 16, or 18 due to their high daily cost.
 
 ## References
-
-1. [Brunel University London. (2019). Supply Chain Logistics Problem Dataset. Brunel University London](https://brunel.figshare.com/articles/dataset/Supply_Chain_Logistics_Problem_Dataset/7558679).
-2. [Dzalbs I, Kalganova T. (2020). Accelerating supply chains with Ant Colony Optimization across a range of hardware solutions. *ScienceDirect*](https://www.sciencedirect.com/science/article/pii/S0360835220303442?via%3Dihub).
-3. [Brechter, L. (n.d.). Supply Chain Data. Kaggle](https://www.kaggle.com/datasets/laurinbrechter/supply-chain-data).
-4. Bertsimas, D. \& Tsitsiklis, J. (1997), Introduction to linear optimization , Athena Scientific .
-5. [Sankey Diagrams in Python](https://medium.com/@cbkwgl/sankey-diagrams-in-python-fc9673465ccb).

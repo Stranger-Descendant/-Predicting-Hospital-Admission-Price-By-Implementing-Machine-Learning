@@ -45,8 +45,8 @@ The dataset used consists of 2,772 entries across 7 columns, focusing on individ
 - Confusion Matrix
 lorem ipsum
 
-![ROC Curve](https://github.com/Stranger-Descendant/-Predicting-Hospital-Admission-Price-By-Implementing-Machine-Learning/raw/main/ROC.png)
 - ROC Curve Analysis: A comparison of ROC curves for different classifiers demonstrates strong performance, particularly for Logistic Regression and XGBoost, with high area under the curve (AUC) scores.
+![ROC Curve](https://github.com/Stranger-Descendant/-Predicting-Hospital-Admission-Price-By-Implementing-Machine-Learning/raw/main/ROC.png)
 
 
 ## Business Insights

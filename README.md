@@ -2,7 +2,8 @@
 
 Project Member: 
 
-![cover](images/cover.jpg)
+![Hospital Cover](https://github.com/Stranger-Descendant/-Predicting-Hospital-Admission-Price-By-Implementing-Machine-Learning/raw/main/hospital%20cover.jpeg)
+
 
 ## Table of Contents
 

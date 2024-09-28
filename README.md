@@ -42,26 +42,13 @@ The dataset used consists of 2,772 entries across 7 columns, focusing on individ
 
 ## Results and Analysis
 
-![result](images/result.png)
+- Confusion Matrix
+lorem ipsum
 
-The figure shows the optimal warehouse and freight allocation for each of the 1000 orders. Note that freight allocation is composed of a warehouse port and carrier.
+![ROC Curve](https://github.com/Stranger-Descendant/-Predicting-Hospital-Admission-Price-By-Implementing-Machine-Learning/raw/main/ROC.png)
+- ROC Curve Analysis: A comparison of ROC curves for different classifiers demonstrates strong performance, particularly for Logistic Regression and XGBoost, with high area under the curve (AUC) scores.
 
-Total cost reduction:
-
-- The optimal cost of our solution is **\$5,365,566.57**.
-- The cost of the solution produced by the baseline model is **\$8,878,241.89**.
-- Our solution reduced the total cost by **\$3,512,675.32**, which is a **39.5%** reduction in cost.
 
 ## Business Insights
 
-The solution produced by our model surpasses the previously provided solution by the freight company.
-
-- We reduced the total cost, including storage and transportation costs, by **39.5%**.
-
-The outcomes obtained in our study align with the expectations derived from our preliminary exploratory analysis.
-
-- Many orders to pass through warehouse port 4.
-- Due to their lower daily cost per unit, many orders were allocated to Warehouse three and 11.
-- Few orders are allocated to warehouses 15, 16, or 18 due to their high daily cost.
-
-## References
+The findings emphasize the critical role of lifestyle choices (e.g., smoking status) in determining health insurance premiums. These insights can inform healthcare providers about the financial implications of various patient demographics and encourage targeted interventions for cost management.
